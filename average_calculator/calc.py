@@ -11,10 +11,12 @@ def calculator():
     while not finished:
         user_input = input("Enter an integer or 'compute': ")
         
+            
         if user_input == "compute":
+            if not numbers:
+                raise ValueError("cannot compute average of an empty collection")
             print_average(numbers)
             finished = True
-           
         else:
             try:
                 number = int(user_input)
