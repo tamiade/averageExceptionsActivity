@@ -13,10 +13,12 @@ def calculator():
         
             
         if user_input == "compute":
-            if not numbers:
-                raise ValueError("cannot compute average of an empty collection")
-            print_average(numbers)
-            finished = True
+            try:
+                print_average(numbers)
+                finished = True
+            except ZeroDivisionError:
+                print("cannot compute average of an empty collection")
+
         else:
             try:
                 number = int(user_input)
